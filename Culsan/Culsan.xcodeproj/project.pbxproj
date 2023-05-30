@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		DD19C9082A12E8920060DDB6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DD19C9072A12E8920060DDB6 /* main.c */; };
+		DD19C9132A12E8E80060DDB6 /* chunk.c in Sources */ = {isa = PBXBuildFile; fileRef = DD19C90E2A12E8E80060DDB6 /* chunk.c */; };
+		DD19C9142A12E8E80060DDB6 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = DD19C9112A12E8E80060DDB6 /* memory.c */; };
+		DD19C9172A12EB600060DDB6 /* debug.c in Sources */ = {isa = PBXBuildFile; fileRef = DD19C9162A12EB600060DDB6 /* debug.c */; };
+		DD19C91A2A12F02A0060DDB6 /* value.c in Sources */ = {isa = PBXBuildFile; fileRef = DD19C9192A12F02A0060DDB6 /* value.c */; };
+		DD19C9202A1439810060DDB6 /* vm.c in Sources */ = {isa = PBXBuildFile; fileRef = DD19C91F2A1439810060DDB6 /* vm.c */; };
+		DD19C9232A16DE710060DDB6 /* compiler.c in Sources */ = {isa = PBXBuildFile; fileRef = DD19C9222A16DE710060DDB6 /* compiler.c */; };
+		DD19C9262A16DEF80060DDB6 /* scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = DD19C9252A16DEF80060DDB6 /* scanner.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,21 @@
 /* Begin PBXFileReference section */
 		DD19C9042A12E8920060DDB6 /* Culsan */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Culsan; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD19C9072A12E8920060DDB6 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		DD19C90E2A12E8E80060DDB6 /* chunk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = chunk.c; sourceTree = "<group>"; };
+		DD19C90F2A12E8E80060DDB6 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		DD19C9102A12E8E80060DDB6 /* chunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chunk.h; sourceTree = "<group>"; };
+		DD19C9112A12E8E80060DDB6 /* memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
+		DD19C9122A12E8E80060DDB6 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		DD19C9152A12EAA50060DDB6 /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		DD19C9162A12EB600060DDB6 /* debug.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = debug.c; sourceTree = "<group>"; };
+		DD19C9182A12EF420060DDB6 /* value.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = value.h; sourceTree = "<group>"; };
+		DD19C9192A12F02A0060DDB6 /* value.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = value.c; sourceTree = "<group>"; };
+		DD19C91E2A1439810060DDB6 /* vm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vm.h; sourceTree = "<group>"; };
+		DD19C91F2A1439810060DDB6 /* vm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vm.c; sourceTree = "<group>"; };
+		DD19C9212A16DE710060DDB6 /* compiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compiler.h; sourceTree = "<group>"; };
+		DD19C9222A16DE710060DDB6 /* compiler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = compiler.c; sourceTree = "<group>"; };
+		DD19C9242A16DEF80060DDB6 /* scanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = scanner.h; sourceTree = "<group>"; };
+		DD19C9252A16DEF80060DDB6 /* scanner.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = scanner.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +79,22 @@
 		DD19C9062A12E8920060DDB6 /* Culsan */ = {
 			isa = PBXGroup;
 			children = (
+				DD19C9212A16DE710060DDB6 /* compiler.h */,
+				DD19C9222A16DE710060DDB6 /* compiler.c */,
+				DD19C9242A16DEF80060DDB6 /* scanner.h */,
+				DD19C9252A16DEF80060DDB6 /* scanner.c */,
+				DD19C90E2A12E8E80060DDB6 /* chunk.c */,
+				DD19C9102A12E8E80060DDB6 /* chunk.h */,
+				DD19C90F2A12E8E80060DDB6 /* common.h */,
+				DD19C9112A12E8E80060DDB6 /* memory.c */,
+				DD19C9122A12E8E80060DDB6 /* memory.h */,
 				DD19C9072A12E8920060DDB6 /* main.c */,
+				DD19C9152A12EAA50060DDB6 /* debug.h */,
+				DD19C9162A12EB600060DDB6 /* debug.c */,
+				DD19C91E2A1439810060DDB6 /* vm.h */,
+				DD19C91F2A1439810060DDB6 /* vm.c */,
+				DD19C9182A12EF420060DDB6 /* value.h */,
+				DD19C9192A12F02A0060DDB6 /* value.c */,
 			);
 			path = Culsan;
 			sourceTree = "<group>";
@@ -119,7 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD19C91A2A12F02A0060DDB6 /* value.c in Sources */,
 				DD19C9082A12E8920060DDB6 /* main.c in Sources */,
+				DD19C9142A12E8E80060DDB6 /* memory.c in Sources */,
+				DD19C9132A12E8E80060DDB6 /* chunk.c in Sources */,
+				DD19C9262A16DEF80060DDB6 /* scanner.c in Sources */,
+				DD19C9232A16DE710060DDB6 /* compiler.c in Sources */,
+				DD19C9202A1439810060DDB6 /* vm.c in Sources */,
+				DD19C9172A12EB600060DDB6 /* debug.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
