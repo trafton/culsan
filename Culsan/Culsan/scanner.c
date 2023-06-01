@@ -175,7 +175,7 @@ static bool match(char expected) {
 }
 
 static Token string() {
-    while(peek() != '\n' && !isAtEnd()) {
+    while(peek() != '"' && !isAtEnd()) {
         if(peek() == '\n') scanner.line++;
         
         advance();
