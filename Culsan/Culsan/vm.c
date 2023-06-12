@@ -13,10 +13,11 @@
 #include "debug.h"
 #include "compiler.h"
 #include "memory.h"
+#include "table.h"
 
 VM vm;
 
-static void resetStack() {
+static void resetStack(void) {
     vm.stackTop = vm.stack;
 }
 
@@ -36,9 +37,11 @@ static void runtimeError(const char* format, ...) {
 void initVM(void) {
     resetStack();
     vm.objects = NULL;
+    initTable(&vm.strings);
 }
 
 void freeVM(void) {
+    freeTable(&vm.strings);
     freeObjects();
 }
 
