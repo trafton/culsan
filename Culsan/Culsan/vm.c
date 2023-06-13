@@ -50,7 +50,7 @@ void push(Value value) {
     vm.stackTop++;
 }
 
-Value pop() {
+Value pop(void) {
     vm.stackTop--;
     return *vm.stackTop;
 }
@@ -63,7 +63,7 @@ static bool isFalsey(Value value) {
     return IS_NIL(value) || (IS_BOOL(value) && !AS_BOOL(value));
 }
 
-static void concatenate() {
+static void concatenate(void) {
     ObjString* bString = AS_STRING(pop());
     ObjString* aString = AS_STRING(pop());
     
@@ -77,7 +77,7 @@ static void concatenate() {
     push(OBJ_VAL(result));
 }
 
-static InterpretResult run() {
+static InterpretResult run(void) {
 #define READ_BYTE() (*vm.ip++)
 #define READ_CONSTANT() (vm.chunk->constants.values[READ_BYTE()])
 #define BINARY_OP(valueType, op) \
@@ -150,9 +150,12 @@ static InterpretResult run() {
                 push(NUMBER_VAL(-AS_NUMBER(pop())));
                 break;
             }
-            case OP_RETURN: {
+            case OP_PRINT:
                 printValue(pop());
                 printf("\n");
+                break;
+            case OP_POP: pop(); break;
+            case OP_RETURN: {
                 return INTERPRET_OK;
             }
         }
