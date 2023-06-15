@@ -15,6 +15,10 @@ static void repl(void) {
             printf("\n");
             break;
         }
+       
+        if(strncmp(".exit", line, 5) == 0) {
+            exit(0);
+        }
         
         interpret(line);
     }
