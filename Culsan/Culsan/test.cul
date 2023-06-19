@@ -1,0 +1,11 @@
+if(5 > 10 ) {
+print "in 5 > 10 then";
+} else {
+print "in 5 > 10 else";
+}
+
+if(5 < 10) {
+print "in 5 < 10 then";
+} else {
+print "in 5 < 10 else";
+}
