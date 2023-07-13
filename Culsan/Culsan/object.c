@@ -35,6 +35,15 @@ static Obj* allocateObject(size_t size, ObjType type) {
     return object;
 }
 
+ObjFunction* newFunction(void) {
+    ObjFunction* function = ALLOCATE_OBJ(ObjFunction, OBJ_FUNCTION);
+    function->arity = 0;
+    function->name = NULL;
+    initChunk(&function->chunk);
+    
+    return function;
+}
+
 static ObjString* allocateString(char* chars, int length, uint32_t hash) {
     ObjString* string = ALLOCATE_OBJ(ObjString, OBJ_STRING);
     string->length = length;
@@ -70,11 +79,22 @@ ObjString* copyString(const char* chars, int length) {
     return allocateString(heapChars, length, hash);
 }
 
+void printFunction(ObjFunction* function) {
+    if(function->name == NULL) {
+        printf("<script>");
+        return;
+    }
+    
+    printf("<fn %s", function->name->chars);
+}
+
 void printObject(Value value) {
     switch(OBJ_TYPE(value)) {
         case OBJ_STRING:
             printf("%s", AS_CSTRING(value));
             break;
+        case OBJ_FUNCTION:
+            printFunction(AS_FUNCTION(value));
         default:
             printf("Cannot print object of unknown type");
             break;
