@@ -85,7 +85,7 @@ void printFunction(ObjFunction* function) {
         return;
     }
     
-    printf("<fn %s", function->name->chars);
+    printf("<fn %s>", function->name->chars);
 }
 
 void printObject(Value value) {
@@ -95,6 +95,7 @@ void printObject(Value value) {
             break;
         case OBJ_FUNCTION:
             printFunction(AS_FUNCTION(value));
+            break;
         default:
             printf("Cannot print object of unknown type");
             break;
